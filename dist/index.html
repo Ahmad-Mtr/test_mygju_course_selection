@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyGJU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Course Information</h1>
+        <form id = "selectionform" class="add"
+            <label for="year">Year</label>
+            <select name="year" id="year" >
+                <option value="2023-2024">2023/2024</option>
+                <option value="2022-2023">2022/2023</option>
+                <option value="2021-2022">2021/2022</option>
+                <option value="2020-2021">2020/2021</option>
+                <option value="2019-2020">2019/2020</option>
+                <option value="2018-2019">2018/2019</option>
+                <option value="2017-2018">2017/2018</option>
+                <option value="2016-2017">2016/2017</option>
+                <option value="2015-2016">2015/2016</option>
+                <option value="2014-2015">2014/2015</option>
+                <option value="2013-2014">2013/2014</option>
+                <option value="2012-2013">2012/2013</option>
+                <option value="2021-2012">2021/2012</option>
+                <option value="2020-2011">2020/2011</option>
+                <option value="2009-2010">2009/2010</option>
+                <option value="2008-2009">2008/2009</option>
+                <option value="2007-2008">2007/2008</option>
+                <option value="2006-2007">2006/2007</option>
+                <option value="2005-2006">2005/2006</option>
+                <option value="2004-2005">2004/2005</option>
+            </select>
+        
+            <label for="semester">Semester</label>
+            <select name="semester" id="semester" >
+                <option value="all_sems" >All</option>
+                <option value="First">First</option>
+                <option value="Second">Second</option>
+                <option value="Summer">Summer</option>
+            </select>
+
+            <label for="degree">Degree</label>
+            <select name="degree" id="degree" >
+                <option value="all_degs">All</option>
+                <option value="bachelors">Bachelors</option>
+                <option value="masters">Masters</option>
+                <option value="phd">PhD</option>
+            </select>
+        
+            <label for="faculty">Faculty</label>
+            <select name="faculty" id="faculty">
+                <option value="all_faculty">All</option>
+                <option value="SAHL">SAHL</option>
+                <option value="SAMS">SAMS</option>
+                <option value="SABE">SABE</option>
+                <option value="SBSH">SBSH</option>
+                <option value="SEEIT">SEEIT</option>
+                <option value="SNREM">SNREM</option>
+                <option value="NURSING">Nursing School</option>
+                <option value="BUSINESS">Business School</option>
+            </select>
+        
+            <label for="department">Department</label>
+            <select name="department" id="department">
+                <option value="all_departments">All</option>
+                <option value="computer_sciences">CS</option>
+                <option value="computer_enineering">CE</option>
+                <option value="electrical_engineering">EE</option>
+            </select>
+        
+          
+          <label for="course_id">Course ID:</label>
+          <input type="text" id="course_id" name="course_id" ><br><br>
+          
+          <label for="course_name">Course Name:</label>
+          <input type="text" id="course_name" name="course_name" ><br><br>
+
+          <label for="section_no">Section No.:</label>
+          <input type="number" id="section_no" name="section_no" ><br><br>
+        
+          <label for="instructor_first_name">Instructor's First Name:</label>
+          <input type="text" id="instructor_first_name" name="instructor_first_name" ><br><br>
+        
+          <label for="instructor_last_name">Instructor's Last Name:</label>
+          <input type="text" id="instructor_last_name" name="instructor_last_name" ><br><br>
+        
+          <label for="max_students">Maximum Number of Students:</label>
+          <input type="number" id="max_students" name="max_students" ><br><br>
+          
+          <label for="curr_students">Current Number of Students:</label>
+          <input type="number" id="curr_students" name="curr_students" ><br><br>
+        
+          <label for="room_name">Room Name:</label>
+          <input type="text" id="room_name" name="room_name" ><br><br>
+        
+          <label for="day">Day:</label>
+          <input type="text" id="day" name="day" ><br><br>
+        
+          <label for="from_time">From Time:</label>
+          <input type="text" id="from_time" name="from_time" ><br><br>
+        
+          <label for="to_time">To Time:</label>
+          <input type="text" id="to_time" name="to_time" ><br><br>
+        
+          <label for="credit_hrs">Credit Hours:</label>
+          <input type="number" id="credit_hrs" name="credit_hrs" ><br><br>
+        
+          <label for="financial_hrs">Financial Hours:</label>
+          <input type="number" id="financial_hrs" name="financial_hrs" ><br><br>
+        
+          <label for="is_blocked">Is Blocked:</label>
+          <input type="checkbox" id="is_blocked" name="is_blocked"><br><br>
+        
+          <button type="submit">Submit</button>
+       
+        </form>
+    <script src="bundle.js"></script>
+</body>
+</html> 
