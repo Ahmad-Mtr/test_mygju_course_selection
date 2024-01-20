@@ -1,56 +1,170 @@
 body {
-    font-family: sans-serif;
-    margin: 20px;
-    background-color: #f5f5f5; /* Light gray background for contrast */
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold; /* Make labels bold for clarity */
-  }
-  
-  /* Style for all input fields and selects */
-  input[type="text"],
-  input[type="number"],
-  select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    box-sizing: border-box; /* Ensure consistent sizing */
-  }
-  
-  /* Style for the submit button */
-  button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Style for the form container */
+  font-family: sans-serif;
+  margin: 0; /* Remove default margin */
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #333; /* Add a background color for visual separation */
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #fff; /* Ensure visibility on dark background */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+/* Optional: Adjust spacing for smaller screens */
+button[type="submit"] {
+  height: 5%;
+  width: 100%; /* Take full width of its container */
+  max-width: 600px; /* Set a maximum width for larger screens */
+  background-color: black; /* Default color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+@media (max-width: 575px) {
   form {
-    width: 500px; /* Adjust width as needed */
-    margin: 0 auto; /* Center the form horizontally */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff; /* White background for content area */
+      margin: 10px auto; /* Reduce margin for smaller screens */
   }
+}
+button[type="submit"]:hover {
+  background-image: linear-gradient(to right top, #2c8ac6, #2c8dc8, #2d90ca, #2d93cc, #2e96ce);
+  /*background-image: linear-gradient(to left, #F2AC00, #2E96CE); /* Gradient on hover */
+}
+
+form {
+  width: 500;
+  margin: 20px auto; /* Ensure consistent spacing */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.dastable{
+  width: fit-content;
+  margin: 20px auto; /* Ensure consistent spacing */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow-x: auto; /* Enable horizontal scrolling */
+
+}
+
+label.required:after {
+  content: "*";
+  color: red;
+}
+
+img{
+  padding: 20px;
   
-  /* Optional: Add some visual cues for required fields */
-  label.required:after {
-    content: "*";
-    color: red;
+}
+h2 {
+  text-align: center;
+  justify-content: center; 
+  align-self:center ;   
+}
+p {
+  text-align: center;
+  font-size: medium;
+  font-weight: bold;
+  color: lightgreen;
+}
+@media (max-width: 768px) { /* Target tablets and smaller screens */
+  body {
+    font-size: 14px; /* Slightly smaller font for better readability */
   }
-  
+
+  form {
+    width: 90%; /* Scale form width for smaller screens */
+  }
+
+  h1 {
+    font-size: 20px; /* Adjust header font size */
+  }
+
+  button[type="submit"] {
+    max-width: 750px;
+    padding: 10px 15px; /* Reduce button padding */
+  }
+}
+
+@media (max-width: 575px) { /* Target mobile phones */
+  form {
+    width: 100%; /* Full width on mobile */
+    margin: 10px auto; /* Reduce margin */
+  }
+  img{
+      width: 120px;
+  }
+  .admin{
+      width: auto;
+  }
+  button[type="submit"] {
+      max-width: 500px;
+      padding: 10px 15px; /* Reduce button padding */
+    }
+  h1 {
+    font-size: 18px; /* Further adjust header font size */
+  }
+}
+.admin{
+  text-align: center;
+  font-weight: bolder;
+  justify-content: center; 
+  align-self:center ;   
+  max-width: fit-content;
+  border: #333;
+  padding: 20px;
+  border-radius: 5%;
+  color: black;
+}
+#coursesTable {
+  border-collapse: collapse; /* Remove extra spacing between cells */
+  width: 100%; /* Ensure full width */
+  margin-bottom: 20px; /* Add some spacing below the table */
+  display: block; /* Treat the table as a block-level element */
+
+}
+
+#coursesTable th,
+#coursesTable td {
+  padding: 10px 15px; /* Add padding for readability */
+  text-align: left; /* Align text to the left */
+  border: 1px solid #ddd; /* Add a subtle border */
+}
+
+#coursesTable th {
+  background-color: #f2f2f2; /* Lighter background for headers */
+  font-weight: bolder; /* Make headers bold */
+}
+
+/* Optional: Add zebra striping for easier readability */
+#coursesTable tr:nth-child(even) {
+  background-color: #f5f5f5;
+}

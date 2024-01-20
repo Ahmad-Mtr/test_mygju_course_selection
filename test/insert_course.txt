@@ -1,0 +1,84 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import {
+  getFirestore, collection, onSnapshot, addDoc, setDoc, doc
+} from 'firebase/firestore';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyD4jHlMLQ-Q5J7qYaNQBnY9aXIDK1vuUKM",
+  authDomain: "mygju-cc9f0.firebaseapp.com",
+  projectId: "mygju-cc9f0",
+  storageBucket: "mygju-cc9f0.appspot.com",
+  messagingSenderId: "952211347313",
+  appId: "1:952211347313:web:fcfca56b3ab8798c7488d0"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// init services
+const db = getFirestore();
+
+// collection ref
+const colRef = collection(db, "courses")
+
+
+// adding documents
+const addCourseForm = document.querySelector('.add')
+addCourseForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  const courseData = {
+    year: addCourseForm.year.value,
+    semester: addCourseForm.semester.value,
+    courseId: addCourseForm.course_id.value,
+    courseName: addCourseForm.course_name.value,
+    sectionNum: addCourseForm.section_no.value,
+    degree: addCourseForm.degree.value,
+    department: addCourseForm.department.value,
+    faculty: addCourseForm.faculty.value,
+    instructor: {
+      firstName: addCourseForm.instructor_first_name.value,
+      lastName: addCourseForm.instructor_last_name.value
+    },
+    schedule: {
+      day: addCourseForm.day.value,
+      roomName: addCourseForm.room_name.value,
+      fromTime: addCourseForm.from_time.value,
+      toTime: addCourseForm.to_time.value
+    },
+    otherInfo: {
+      maxStudents: addCourseForm.max_students.value,
+      currStudents: addCourseForm.curr_students.value,
+      creditHrs: addCourseForm.credit_hrs.value,
+      financialHrs: addCourseForm.financial_hrs.value,
+      isBlocked: addCourseForm.is_blocked.value
+    }
+  };
+  // Construct the document ID using the composite key fields
+  const docId = `${courseData.year}_${courseData.semester}_${courseData.courseId}_${courseData.sectionNum}`;
+
+  insertDocs(docId, courseData);
+  console.log('Course Added Succesfully!')
+})
+
+
+// getDocs
+// Real time Data Collection
+onSnapshot(colRef, (snapshot) => {
+  let courses = []
+  snapshot.docs.forEach((doc) => {
+    courses.push({ ...doc.data(), id: doc.id })
+  }
+  )
+  console.log(courses)
+}
+)
+
+
+async function insertDocs(docId, courseData) {
+  await setDoc(doc(db,"courses", docId), courseData)
+}

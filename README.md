@@ -76,6 +76,54 @@ onSnapshot(colRef, (snapshot)=>{
     console.log(courses)}
 )
 ```
+-------------------------
+##### Adding Docs
+```js
+// adding documents
+const addCourseForm = document.querySelector('.add')
+addCourseForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  const courseData = {
+    year: addCourseForm.year.value,
+    semester: addCourseForm.semester.value,
+    courseId: addCourseForm.course_id.value,
+    courseName: addCourseForm.course_name.value,
+    sectionNum: addCourseForm.section_no.value,
+    degree: addCourseForm.degree.value,
+    department: addCourseForm.department.value,
+    faculty: addCourseForm.faculty.value,
+    instructor: {
+      firstName: addCourseForm.instructor_first_name.value,
+      lastName: addCourseForm.instructor_last_name.value
+    },
+    schedule: {
+      day: addCourseForm.day.value,
+      roomName: addCourseForm.room_name.value,
+      fromTime: addCourseForm.from_time.value,
+      toTime: addCourseForm.to_time.value
+    },
+    otherInfo: {
+      maxStudents: addCourseForm.max_students.value,
+      currStudents: addCourseForm.curr_students.value,
+      creditHrs: addCourseForm.credit_hrs.value,
+      financialHrs: addCourseForm.financial_hrs.value,
+      isBlocked: addCourseForm.is_blocked.value
+    }
+  };
+  // Construct the document ID using the composite key fields
+  const docId = `${courseData.year}_${courseData.semester}_${courseData.courseId}_${courseData.sectionNum}`;
+
+  addDoc(collection(db, "courses", docId), courseData)
+    .then((docRef) => {
+      addCourseForm.reset()
+      console.log("Course added successfully! DOC ID: ", docRef.id );
+    })
+    .catch((error) => {
+      console.error("Error adding course:", error);
+    });
+})
+```
 ---------------------------------------------------
 ### json
 #### `firebase.json`
