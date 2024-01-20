@@ -5,14 +5,14 @@ body {
 }
 
 header {
-  background-color: #333; /* Add a background color for visual separation */
+  background-color: #333; 
   padding: 10px;
 }
 
 h1 {
   text-align: center;
   font-size: 24px;
-  color: #fff; /* Ensure visibility on dark background */
+  color: #fff; /*  visibility on dark background: Exp: DarkReader */
 }
 
 label {
@@ -32,18 +32,18 @@ select {
   box-sizing: border-box;
 }
 
-/* Optional: Adjust spacing for smaller screens */
+
 button[type="submit"] {
   height: 5%;
   width: 100%; /* Take full width of its container */
   max-width: 600px; /* Set a maximum width for larger screens */
-  background-color: black; /* Default color */
+  background-color: black; 
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+  transition: background-color 0.3s ease; 
 }
 
 @media (max-width: 575px) {
@@ -58,7 +58,7 @@ button[type="submit"]:hover {
 
 form {
   width: 500;
-  margin: 20px auto; /* Ensure consistent spacing */
+  margin: 20px auto; /* consistent spacing */
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -66,12 +66,12 @@ form {
 }
 .dastable{
   width: fit-content;
-  margin: 20px auto; /* Ensure consistent spacing */
+  margin: 20px auto; /* consistent spacing */
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
-  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-x: auto; 
 
 }
 
@@ -97,7 +97,7 @@ p {
 }
 @media (max-width: 768px) { /* Target tablets and smaller screens */
   body {
-    font-size: 14px; /* Slightly smaller font for better readability */
+    font-size: 14px;
   }
 
   form {
@@ -105,12 +105,12 @@ p {
   }
 
   h1 {
-    font-size: 20px; /* Adjust header font size */
+    font-size: 20px; 
   }
 
   button[type="submit"] {
     max-width: 750px;
-    padding: 10px 15px; /* Reduce button padding */
+    padding: 10px 15px;
   }
 }
 
@@ -127,10 +127,10 @@ p {
   }
   button[type="submit"] {
       max-width: 500px;
-      padding: 10px 15px; /* Reduce button padding */
+      padding: 10px 15px; /
     }
   h1 {
-    font-size: 18px; /* Further adjust header font size */
+    font-size: 18px;
   }
 }
 .admin{
@@ -148,7 +148,7 @@ p {
   border-collapse: collapse; /* Remove extra spacing between cells */
   width: 100%; /* Ensure full width */
   margin-bottom: 20px; /* Add some spacing below the table */
-  display: block; /* Treat the table as a block-level element */
+  display: block; 
 
 }
 
@@ -164,7 +164,6 @@ p {
   font-weight: bolder; /* Make headers bold */
 }
 
-/* Optional: Add zebra striping for easier readability */
 #coursesTable tr:nth-child(even) {
   background-color: #f5f5f5;
 }

@@ -70,8 +70,6 @@ function _displayCourses(courses) {
 
 
 // getDocs
-
-// Real time Data Collection
 getDocs(colRef).then((snapshot) => {
   let courses = []
   snapshot.docs.forEach((doc) => {
@@ -80,7 +78,7 @@ getDocs(colRef).then((snapshot) => {
   )
   _displayCourses(courses);
   console.log(courses)
-  console.log('courses added susssss')
+  
 })
 
 async function insertDocs(docId, courseData) {
